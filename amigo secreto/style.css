@@ -130,8 +130,8 @@ ul {
     list-style-type: none;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
+    font-size: 16px;
+    
 }
 
 .result-list {
@@ -151,6 +151,9 @@ ul {
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    position: sticky;
+    top: 0; /* Fija el botón en la parte superior */
+    z-index: 1; /* Asegúrate de que se quede por encima de otros elementos */
 }
 
 .button-draw img {
@@ -160,3 +163,64 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+
+
+/* Contenedor de notificaciones */
+.notificacion-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Estilos generales de las notificaciones */
+.notificacion {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Colores según el tipo de mensaje */
+.notificacion.exito {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.notificacion.error {
+    background-color: #FF4C4C;
+    color: white;
+}
+
+/* Animación de desaparición */
+.notificacion.desaparecer {
+    opacity: 0;
+}
+
+/* Lista de nombres */
+.name-list {
+    display: grid; /* Usamos grid en lugar de flex */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 5px; /* Espacio entre los elementos */
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid var(--color-tertiary);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+
+
+
+
